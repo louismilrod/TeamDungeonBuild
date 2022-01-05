@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Concert_Dungeon
 {
-    internal class POCO_Repo
+    public class POCO_Repo
     {
+
+
     }
 }
