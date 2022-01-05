@@ -12,7 +12,9 @@ namespace ProgramUI
 {
     public class ProgramUI
     {
-                    
+        private bool hasTicket;
+        private bool hasMoney;
+
         public void Run()
         {                
             Seed();
@@ -21,8 +23,8 @@ namespace ProgramUI
 
         private void Seed()
         {
-            File.WriteAllLines("@www.github.com/therepo");
-            string text = File.ReadAllText(@);
+            //File.WriteAllLines("@www.github.com/therepo");
+            //string text = File.ReadAllText(@);
             throw new NotImplementedException();
         }
 
@@ -112,6 +114,11 @@ namespace ProgramUI
 
         public bool BoxOffice()
         {
+            WriteLine("You approach the ticket counter.\n\n" +
+                "An old man with a thinning ponytail and a Twisted Sister teashirt looks you up and down.\n" +
+                "Do you have a ticket?");
+            ReadLine();
+
 
             if (hasTicket==true)
             {
@@ -119,9 +126,42 @@ namespace ProgramUI
             }
             else
             {
-                //offer to sell ticket if 
-            }
+                WriteLine("Would you like to puchase a ticket?\n" +
+                    "1. Yes\n" +
+                    "2. No\n");
+                string userinput = ReadLine();
+                switch(userinput)
+                {
+                    case "1":
+                        if (hasMoney == false)
+                        {
+                            Console.WriteLine("You don't have any money! Get out of here before I call security!");
+                        }
+                        else YouWin();
+                        break;
+                    case"2":
+                        WriteLine("Then why are you here? Shoo, shoo!");
+                        Thread.Sleep(2000);
+                        break;
+                    case "I wanna rock":
+                        WriteLine("'I used to be just like you kid. Don't tell anyone.'" +
+                            "He winks at you as he slides you a ticket stub");
+                        Thread.Sleep(2000);
+                        YouWin();
+                        break;
 
+                }
+            }
+            return true;
+            
+
+        }
+
+        public void YouWin()
+        {
+            WriteLine("Welcome to the greatest concert of your life!"); ;
+            Thread.Sleep(2000);
+            return;
         }
 
         private void Bathroom()
