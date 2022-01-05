@@ -50,5 +50,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Concert_Dungeon\Concert_Dungeon_POCOs.csproj">
+      <Project>{fbe9ce3e-d7db-4ea5-9d55-d230ef211e9f}</Project>
+      <Name>Concert_Dungeon_POCOs</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
