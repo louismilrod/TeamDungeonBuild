@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FBE9CE3E-D7DB-4EA5-9D55-D230EF211E9F}</ProjectGuid>
+    <ProjectGuid>{446489FE-FE09-4DA7-A808-3345DD028FB1}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Concert_Dungeon</RootNamespace>
-    <AssemblyName>Concert_Dungeon</AssemblyName>
+    <RootNamespace>ProgramUI</RootNamespace>
+    <AssemblyName>ProgramUI</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
+    <Compile Include="ProgramUI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

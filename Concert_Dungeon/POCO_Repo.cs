@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Concert_Dungeon
 {
-    internal class Program
+    internal class POCO_Repo
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }

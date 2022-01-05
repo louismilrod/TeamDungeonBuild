@@ -1,0 +1,3 @@
+D:\ElevenFiftyProjects\Blue Badge\C#_Challanges\Concert_Dungeon\Concert_Dungeon\obj\Debug\Concert_Dungeon_POCOs.csproj.AssemblyReference.cache
+D:\ElevenFiftyProjects\Blue Badge\C#_Challanges\Concert_Dungeon\Concert_Dungeon\obj\Debug\Concert_Dungeon_POCOs.csproj.SuggestedBindingRedirects.cache
+D:\ElevenFiftyProjects\Blue Badge\C#_Challanges\Concert_Dungeon\Concert_Dungeon\obj\Debug\Concert_Dungeon_POCOs.csproj.CoreCompileInputs.cache

@@ -1,0 +1,3 @@
+D:\ElevenFiftyProjects\Blue Badge\C#_Challanges\Concert_Dungeon\ProgramUI\obj\Debug\ProgramUI.csproj.AssemblyReference.cache
+D:\ElevenFiftyProjects\Blue Badge\C#_Challanges\Concert_Dungeon\ProgramUI\obj\Debug\ProgramUI.csproj.SuggestedBindingRedirects.cache
+D:\ElevenFiftyProjects\Blue Badge\C#_Challanges\Concert_Dungeon\ProgramUI\obj\Debug\ProgramUI.csproj.CoreCompileInputs.cache
