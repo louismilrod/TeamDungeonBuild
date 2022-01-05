@@ -30,7 +30,7 @@ namespace ProgramUI
                     Clear();
                     WriteLine("You have been shut out and drove 8 hours for nothing");
                     Thread.Sleep(1500);
-                    return false;                             
+                    return false;
                 }
             }
         }
