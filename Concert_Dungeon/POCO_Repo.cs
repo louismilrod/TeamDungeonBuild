@@ -29,15 +29,15 @@ namespace POCO_Directory
             }
 
             //_count++;
-            newCharacter.PlayerNameInt = 1;
+            //newCharacter.PlayerNameInt = 1;
             _repo.Add(newCharacter);
             return true;
 
         }
 
-        public List<Character> GetCharacter()           //read
+        public Character GetCharacter()           //read
         {
-            return _repo;
+            return _repo.ElementAt(0);
         }
 
         public Character GetCharacterByPlayerNameInt(int id)
@@ -52,7 +52,7 @@ namespace POCO_Directory
             return null;
         }
 
-        public bool UpdateDeveloper(int characterID, Character newCharacter) //update
+        public bool UpdateCharacter(int characterID, Character newCharacter) //update
         {
             Character oldCharacter = GetCharacterByPlayerNameInt(characterID);
 

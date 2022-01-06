@@ -44,5 +44,19 @@ namespace POCO_Directory
 
         public int PlayerNameInt { get; set; }
 
+        public bool HasAllThreeItems
+        {
+            get { return false ; }
+             
+            set 
+            { 
+               if (HasClipBoard==true && HasLadder==true && HasVest==true)
+                {
+                    return;
+                }
+
+            }        
+        }
+
     }
 }
