@@ -14,6 +14,7 @@ namespace ProgramUI
     {
         private bool hasTicket;
         private bool hasMoney;
+        private bool hasClipboard;
 
         public void Run()
         {                
@@ -44,7 +45,7 @@ namespace ProgramUI
                 switch (userinput)
                 {
                     case "1":
-                        StartANewGame();
+                        ExplorationMenu();
                         break;
                     case "2":
                         LoadAGame();
@@ -63,7 +64,7 @@ namespace ProgramUI
             }
         }
 
-        private void StartANewGame()
+        private void ExplorationMenu()
         {
             Clear();
             Write("Welcome my son to the machine followed by an explanation of goals");
@@ -91,7 +92,7 @@ namespace ProgramUI
                     ParkingLotC();
                     break;
                 case "4":
-                    NorthEnterance();
+                    PressEnterance();
                     break;
                 case "5":
                     SouthEnterance();
@@ -129,7 +130,7 @@ namespace ProgramUI
                 WriteLine("Would you like to puchase a ticket?\n" +
                     "1. Yes\n" +
                     "2. No\n");
-                string userinput = ReadLine();
+                string userinput = ReadLine().ToLower();
                 switch(userinput)
                 {
                     case "1":
@@ -143,7 +144,7 @@ namespace ProgramUI
                         WriteLine("Then why are you here? Shoo, shoo!");
                         Thread.Sleep(2000);
                         break;
-                    case "I wanna rock":
+                    case "i wanna rock":
                         WriteLine("'I used to be just like you kid. Don't tell anyone.'" +
                             "He winks at you as he slides you a ticket stub");
                         Thread.Sleep(2000);
@@ -159,45 +160,93 @@ namespace ProgramUI
 
         public void YouWin()
         {
-            WriteLine("Welcome to the greatest concert of your life!"); ;
+            WriteLine("Welcome to the greatest concert of your life!"); 
+            Thread.Sleep(2000);
+            return;
+        }
+
+        public void YouLose()
+        {
+            WriteLine("You did not get in the door and drove eight hours one way for nothing");
             Thread.Sleep(2000);
             return;
         }
 
         private void Bathroom()
         {
-            throw new NotImplementedException();
+            WriteLine("Its dark and dingy and smells bad. \n" +
+                "What would you like to do?\n" +
+                "1. Look around the bathroom \n" +
+                "2. Talk to someone in the bathroom \n" +
+                "3. Search the trash can\n" +
+                "4. Back");    //search the bathroom, talk to someone in the bathroom, search the trash (find an item//clipboard used for cleaning rotation), 
+
+            string userInput = ReadLine().ToLower();
+            
+            switch (userInput)
+            {
+                case"1":
+                    WriteLine("In front of you is a mirror and a sink \n" +
+                        "You glance to the left and notice a sticker for the band \n" +
+                        "You look to your right and notice an overlfowing trash can");
+                    Thread.Sleep(2000);
+                    break;
+                case "2":
+                    WriteLine("Why are you talking to me in the bathroom dude? Do you take picuters of peoples texts too?");
+                    Thread.Sleep(2000);
+                    break;
+                case "3":
+                    WriteLine("The trash is overlfowing with Liquid Death \n" +
+                        "On the right of the bin there is an empty clipboard with an unused cleaning rotation check list \n" +
+                        "Do you want to abscond with this clipboard? Yes/No");
+                    if (userInput == "yes")
+                    {
+
+                        WriteLine("You have found a clipboard? What you will you do with it?");
+                        hasClipboard = true;
+
+                    }
+                    else
+                    {
+                        WriteLine("You left the clipboard where you found it like your mother taught you");
+                    }
+                    break;
+                case"4":
+                    
+                default: WriteLine("The bathroom is a weird place man...");
+                    break;
+            }
         }
 
         private void EastEnterance()
         {
             throw new NotImplementedException();
-        }
+        }  //normal security gate, ticket guard to interact w/
 
         private void SouthEnterance()
         {
             throw new NotImplementedException();
-        }
+        } // other concert goers, more relaxed security guy
 
-        private void NorthEnterance()
+        private void PressEnterance()
         {
             throw new NotImplementedException();
-        }
+        }       //locked enterance, road-crew guy to bribe to sneak in
 
         private void ParkingLotC()
         {
             throw new NotImplementedException();
-        }
+        } //grilled cheese and fancy rocks for sale (vest)
 
         private void ParkingLotB()
         {
             throw new NotImplementedException();
-        }
+        } //band tour busses and construction vehicles (ladder)
 
         private void ParkingLotA()
         {
             throw new NotImplementedException();
-        }
+        } //scalper guy with sketch ticket, some hippies lost dog
 
         private void LoadAGame()
         {
