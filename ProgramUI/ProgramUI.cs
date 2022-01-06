@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,7 +30,7 @@ namespace Program
         {
             Character character = new Character(false, false, false, false, false);
             _repo.AddCharacterToDirectory(character);
-            
+
 
             //    //File.WriteAllLines("@www.github.com/therepo");
             //    //string text = File.ReadAllText(@);
@@ -126,14 +126,32 @@ namespace Program
         {
             var character = _repo.GetCharacter();
             string userinput = ReadLine().ToLower();
-            
+
 
             WriteLine("You approach the ticket counter.\n" +
-                "An old man with a thinning ponytail and a Twisted Sister teashirt looks you up and down.\n" +
+                "An old man with a thinning ponytail and a Twisted Sister t-shirt looks you up and down.\n" +
                 "Do you have a ticket?");
             ReadLine();
 
+            if (character.HasScalpedticket == true)
+            {
+                WriteLine("'You sure this thing is real?' the ticket taker asks.");
+                Thread.Sleep(1750);
+                if (character.ScalpedTicket == true)
+                {
+                    WriteLine("'Huh, guess it worked. Enjoy the show'");
+                    Thread.Sleep(2500);
+                    YouWin();
+                }
+                else 
+                {
+                    WriteLine("I knew it was too good to be true!\n" +
+                        "That ticket was a total fake!");
+                    Thread.Sleep(3000);
+                    YouLose();
+                }
 
+            }
             if (character.HasTicket == true)
             {
                 WriteLine("Enjoy the concert");
@@ -156,8 +174,8 @@ namespace Program
                 {
                     Console.WriteLine("Then why did you come here?");
                     ExplorationMenu();
-                }              
-                
+                }
+
 
 
                 switch (userinput)
@@ -313,7 +331,7 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMWNKKKKKKKK000000000K
                     {
 
                         WriteLine("You have found a clipboard? What you will you do with it?");
-                        character.HasClipBoard = true;                        
+                        character.HasClipBoard = true;
 
                     }
                     else
@@ -401,7 +419,7 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMWNKKKKKKKK000000000K
             {
                 case "y":
                     WriteLine("You join the line at the back.");
-                    
+
                     bool isWaiting = true;
                     do
                     {
@@ -420,7 +438,8 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMWNKKKKKKKK000000000K
                     Thread.Sleep(2000);
                     ExplorationMenu();
                     break;
-                default: WriteLine("Please enter a valid selection");
+                default:
+                    WriteLine("Please enter a valid selection");
                     break;
             }
         }
@@ -435,7 +454,7 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMWNKKKKKKKK000000000K
             string userinput = ReadLine().ToLower();
             switch (userinput)
             {
-                case"y":                   
+                case "y":
 
                     Console.WriteLine("'Hey kid, do you know who the Dan is in Steely Dan?'");
                     string userinput2 = ReadLine().ToLower();
@@ -462,7 +481,7 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMWNKKKKKKKK000000000K
                         ExplorationMenu();
                     }
                     break;
-                case"n":
+                case "n":
                     WriteLine("Back to the drawing board");
                     ExplorationMenu();
                     break;
@@ -473,7 +492,7 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMWNKKKKKKKK000000000K
 
         }
 
-        private void ParkingLotC()
+        private void ParkingLotC()  //grilled cheese and fancy rocks for sale
         {
             WriteLine("You approach parking lot C and its...smelly \n" +
                 "There is a booth for grilled cheese and a booth for rocks \n" +
@@ -513,18 +532,26 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMWNKKKKKKKK000000000K
                     WriteLine("'The stupid hippie carrying them, now scram'");
                     Thread.Sleep(1000);
                     ExplorationMenu();
-                    
+
 
                 }
                 if (userinput3 == "n")
                 {
                     WriteLine("'They're not rocks, they are minerals. \n" +
-                        "Thanks for looking. Do you want to stay?'y/n");
+                        "Thanks for looking. Do you want to have a look around?' y/n");
+                    bool funnyjoke = false;
                     string userinput4 = ReadLine().ToLower();
-                    do 
+
+                    if (userinput4 == "y")
+                    {
+                        funnyjoke = true;
+                    }
+                    do
                     {
                         WriteLine("You are looking around at all the amazing hunks of earth this guy drove to Pittsburgh for some reason");
-                    }while (userinput4 == "y");
+                        Thread.Sleep(3000);
+
+                    } while (funnyjoke == false);
                     if (userinput4 == "n")
                     {
                         Thread.Sleep(1000);
@@ -534,19 +561,72 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMWNKKKKKKKK000000000K
                 }
             }
 
+        }
 
-
-
-        } //grilled cheese and fancy rocks for sale
-
-        private void ParkingLotB()
+        private void ParkingLotB()  //band tour busses and construction vehicles (ladder)
         {
-            throw new NotImplementedException();
-        } //band tour busses and construction vehicles (ladder)
+
+            var character = _repo.GetCharacter();
+            WriteLine("You approach Parking Lot B and find the tour busses parked alongside of some construction equipment \n" +
+                "Would you like to inspect the tour bus or the construction equipment?");
+            string userinput = ReadLine().ToLower();
+            switch (userinput)
+            {
+                case "tour bus":
+
+                    break;
+                case "construction equipment":
+                    break;
+                default:
+                    WriteLine("Please enter a valid selection");
+                    break;
+            }
+
+
+        }
 
         private void ParkingLotA()  //scalper guy with sketch ticket, some hippies lost dog
         {
-            throw new NotImplementedException();
+            var character = _repo.GetCharacter();
+            WriteLine("You journey into the A Lot\n" +
+                "You see a man in a trench coat with a cigarette hanging out of his mouth next to a burned out van\n" +
+                "and a border collie with a red handkerchief tied around it's neck\n" +
+                "Which would you like to approach?");
+            string userinput = ReadLine().ToLower();
+            switch (userinput)
+            {
+                case "the man":
+                    WriteLine("Hey man, I got some tickets, real cheap, you looking to buy?");
+                    string userinput1 = ReadLine().ToLower();
+                    if (userinput1 == "y")
+                    {
+                        WriteLine("He pulls out a stack of tickets from a brown paper bag\n" +
+                            "He holds them out to you like a cheap deck of cards\n" +
+                            "'Pick a ticket, any ticket' he says with a toothless grin\n" +
+                            "Do you want to use this ticket? y/n");
+                        character.HasScalpedticket = true;
+                        string userinput2 = ReadLine().ToLower();
+                        if (userinput2 == "y")
+                        {
+                            BoxOffice();
+                        }
+                        else
+                        {
+                            ExplorationMenu();
+                        }
+                    }
+                    if (userinput1 == "n")
+                        character.ScalpedTicket = false;
+                    WriteLine("You decide it's best to not trust his 'merchandise'");
+                        Thread.Sleep(3000);
+                    ExplorationMenu();
+                    break;
+                case "the dog":
+                    break;
+                default:
+                    WriteLine("Please enter a valid selection");
+                        break;
+            }
         }
 
         private void LoadAGame()

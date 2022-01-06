@@ -39,8 +39,15 @@ namespace POCO_Directory
                 int x = ticket.Next(0, 50);
                 return (x > 25);                
             }
+
+            set
+            {
+
+            }
             
         }
+
+        public bool HasScalpedticket { get; set; }
 
         public int PlayerNameInt { get; set; }
 
