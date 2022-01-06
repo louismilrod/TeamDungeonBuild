@@ -15,6 +15,7 @@ namespace ProgramUI
         private bool hasTicket;
         private bool hasMoney;
         private bool hasClipboard;
+        string userinput = ReadLine().ToLower();
 
         public void Run()
         {                
@@ -41,7 +42,7 @@ namespace ProgramUI
                     "3. Delete Game\n" + 
                     "4. Exit \n");
                 
-                string userinput = Console.ReadLine();
+                
                 switch (userinput)
                 {
                     case "1":
@@ -76,9 +77,7 @@ namespace ProgramUI
                 "5. South Entrance \n" +
                 "6. East Entrance \n" +
                 "7. Bathroom \n" +
-                "8. Box Office \n");
-
-            string userinput = ReadLine();
+                "8. Box Office \n");            
 
             switch (userinput)
             {
@@ -130,7 +129,7 @@ namespace ProgramUI
                 WriteLine("Would you like to puchase a ticket?\n" +
                     "1. Yes\n" +
                     "2. No\n");
-                string userinput = ReadLine().ToLower();
+                
                 switch(userinput)
                 {
                     case "1":
@@ -172,14 +171,14 @@ namespace ProgramUI
             return;
         }
 
-        private void Bathroom()
+        private void Bathroom()  //search the bathroom, talk to someone in the bathroom, search the trash (find an item//clipboard used for cleaning rotation),
         {
             WriteLine("Its dark and dingy and smells bad. \n" +
                 "What would you like to do?\n" +
                 "1. Look around the bathroom \n" +
                 "2. Talk to someone in the bathroom \n" +
                 "3. Search the trash can\n" +
-                "4. Back");    //search the bathroom, talk to someone in the bathroom, search the trash (find an item//clipboard used for cleaning rotation), 
+                "4. Back");     
 
             string userInput = ReadLine().ToLower();
             
@@ -212,16 +211,19 @@ namespace ProgramUI
                     }
                     break;
                 case"4":
-                    
+                    ExplorationMenu();
+                    break;
                 default: WriteLine("The bathroom is a weird place man...");
                     break;
             }
         }
 
-        private void EastEnterance()
+        private void EastEnterance() //normal security gate, ticket guard to interact w/
         {
-            throw new NotImplementedException();
-        }  //normal security gate, ticket guard to interact w/
+            WriteLine("You approach the venue from the east. \n" +
+                "You are optimisitc the line will be short.");
+
+        }  
 
         private void SouthEnterance()
         {
