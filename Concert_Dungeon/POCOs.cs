@@ -9,12 +9,13 @@ namespace POCO_Directory
 {
     public class Character
     {
-        public Character(bool hasTicket, bool hasLadder, bool hasVest, bool hasClipBoard)
+        public Character(bool hasTicket, bool hasLadder, bool hasVest, bool hasClipBoard, bool hasMoney)
         {
             HasTicket = hasTicket;
             HasLadder = hasLadder;  
             HasVest = hasVest;
-            HasClipBoard = hasClipBoard;            
+            HasClipBoard = hasClipBoard;  
+            HasMoney = hasMoney;
 
         }
 
@@ -28,17 +29,20 @@ namespace POCO_Directory
         public bool HasVest { get; set; }
         public bool HasClipBoard { get; set; }
 
+        public bool HasMoney { get; set; }
+
         public bool ScalpedTicket
         {
             get
             {
                 Random ticket = new Random();
                 int x = ticket.Next(0, 50);
-                return (x > 25);
-                
+                return (x > 25);                
             }
             
         }
+
+        public int PlayerNameInt { get; set; }
 
     }
 }

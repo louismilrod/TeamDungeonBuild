@@ -7,28 +7,18 @@ using System.Threading;
 using System.IO;
 using static System.Console;
 using POCO_Directory;
-using static POCO_Directory.Character;
 
 namespace Program
 {
     public class ProgramUI
+
     {
+            public POCO_Repo _repo = new POCO_Repo();                      
         
         //private bool hasTicket;
         //private bool hasMoney;
         //private bool hasClipboard;
-        
-
-        public ProgramUI()
-        {
-            
-        }
-
-        public ProgramUI(bool hasTicket)
-        {
-            
-            
-        }
+               
 
         public void Run()
         {                
@@ -38,10 +28,12 @@ namespace Program
 
         private void Seed()
         {
-            Character character = new Character();
+            Character character = new Character(false, false, false, false, false);
+            _repo.AddCharacterToDirectory(character);
+
         //    //File.WriteAllLines("@www.github.com/therepo");
         //    //string text = File.ReadAllText(@);
-        //    throw new NotImplementedException();
+        
         }
 
         private void ShowMenu()
@@ -136,7 +128,7 @@ namespace Program
             ReadLine();
 
 
-            if (character.hasTicket==true)
+            if (character.HasTicket==true)
             {
                 WriteLine("Enjoy the concert");
             }
@@ -151,7 +143,7 @@ namespace Program
                 switch (userinput)
                 {
                     case "1":
-                        if (hasMoney == false)
+                        if (character.HasMoney == false)
                         {
                             Console.WriteLine("You don't have any money! Get out of here before I call security!");
                         }
@@ -219,7 +211,7 @@ namespace Program
                     {
 
                         WriteLine("You have found a clipboard? What you will you do with it?");
-                        Character.hasClipboard = true;
+                        character.HasClipBoard = true;
 
                     }
                     else
@@ -237,6 +229,10 @@ namespace Program
 
         private void EastEnterance() //normal security gate, ticket guard to interact w/, (guard could stop you)
         {
+            
+
+            List<Character> character = _repo.GetCharacter();
+
             WriteLine("You approach the venue from the east. \n" +
                 "You are optimistic the line will be short (it won't be).\n" +
                 "What would you like to do?\n" +
@@ -252,7 +248,7 @@ namespace Program
                         "He looks at you while wipping his face with a handkerchief\n" +
                         "'Do you have a ticket?'");
                     break;
-                    if (hasAtLeastThreeItems == true)
+                    if (character.HasLadder == true && character.)
                     {
                         Console.WriteLine('Oh, the safety inspector, come right in, Sir!');
                         Thread.Sleep(3000);
@@ -264,7 +260,8 @@ namespace Program
                     }
                     {
                         Console.WriteLine("Come back when you have a ticket");
-                    }else if (scalpedTicket)
+                    }
+                    else if (scalpedTicket)
                     {
 
                     }
