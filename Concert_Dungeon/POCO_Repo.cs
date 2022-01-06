@@ -8,6 +8,8 @@ namespace Concert_Dungeon
 {
     public class POCO_Repo
     {
-
+        public readonly List<POCOs> _repo = new List<POCOs>();
+        
+        
     }
 }

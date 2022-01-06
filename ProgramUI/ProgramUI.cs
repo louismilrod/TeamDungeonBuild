@@ -6,29 +6,37 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.IO;
 using static System.Console;
-using static Concert_Dungeon.POCOs;
 
-namespace ProgramUI
+
+namespace Program
 {
     public class ProgramUI
     {
+        new POCOs poco = new POCOs();
+        
         private bool hasTicket;
         private bool hasMoney;
         private bool hasClipboard;
-        string userinput = ReadLine().ToLower();
+        
+
+        public ProgramUI()
+        {
+            
+        }
+
 
         public void Run()
         {                
-            Seed();
+            //Seed();
             ShowMenu();
         }
 
-        private void Seed()
-        {
-            //File.WriteAllLines("@www.github.com/therepo");
-            //string text = File.ReadAllText(@);
-            throw new NotImplementedException();
-        }
+        //private void Seed()
+        //{
+        //    //File.WriteAllLines("@www.github.com/therepo");
+        //    //string text = File.ReadAllText(@);
+        //    throw new NotImplementedException();
+        //}
 
         private void ShowMenu()
         {
@@ -40,9 +48,9 @@ namespace ProgramUI
                     "1. Start a new run\n" +
                     "2. Load a game \n" + 
                     "3. Delete Game\n" + 
-                    "4. Exit \n");
-                
-                
+                    "4. Exit \n");                
+
+                string userinput = ReadLine();
                 switch (userinput)
                 {
                     case "1":
@@ -77,7 +85,9 @@ namespace ProgramUI
                 "5. South Entrance \n" +
                 "6. East Entrance \n" +
                 "7. Bathroom \n" +
-                "8. Box Office \n");            
+                "8. Box Office \n");
+
+            string userinput = ReadLine().ToLower();
 
             switch (userinput)
             {
@@ -129,8 +139,10 @@ namespace ProgramUI
                 WriteLine("Would you like to puchase a ticket?\n" +
                     "1. Yes\n" +
                     "2. No\n");
-                
-                switch(userinput)
+
+                string userinput = ReadLine().ToLower();
+
+                switch (userinput)
                 {
                     case "1":
                         if (hasMoney == false)
@@ -178,11 +190,11 @@ namespace ProgramUI
                 "1. Look around the bathroom \n" +
                 "2. Talk to someone in the bathroom \n" +
                 "3. Search the trash can\n" +
-                "4. Back");     
+                "4. Back");
 
-            string userInput = ReadLine().ToLower();
-            
-            switch (userInput)
+            string userinput = ReadLine().ToLower();
+
+            switch (userinput)
             {
                 case"1":
                     WriteLine("In front of you is a mirror and a sink \n" +
@@ -198,7 +210,7 @@ namespace ProgramUI
                     WriteLine("The trash is overlfowing with Liquid Death \n" +
                         "On the right of the bin there is an empty clipboard with an unused cleaning rotation check list \n" +
                         "Do you want to abscond with this clipboard? Yes/No");
-                    if (userInput == "yes")
+                    if (userinput == "yes")
                     {
 
                         WriteLine("You have found a clipboard? What you will you do with it?");

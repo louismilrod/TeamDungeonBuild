@@ -8,18 +8,14 @@ using static System.Console;
 using System.Threading;
 
 
-namespace ProgramUI
+namespace Program
 {
-    public class Program
+    internal class Program
     {
         static void Main(string[] args)
-        {
-
-            {
-                ProgramUI ui = new ProgramUI();
-                ui.Run();
-            }
-
+        {            
+            ProgramUI ui = new ProgramUI();
+            ui.Run();
 
         } 
     }

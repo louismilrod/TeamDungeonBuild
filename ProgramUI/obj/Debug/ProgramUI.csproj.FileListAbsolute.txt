@@ -1,3 +1,12 @@
+D:\ElevenFiftyProjects\Blue Badge\C#_Challanges\Concert_Dungeon\ProgramUI\bin\Debug\ProgramUI.exe.config
+D:\ElevenFiftyProjects\Blue Badge\C#_Challanges\Concert_Dungeon\ProgramUI\bin\Debug\ProgramUI.exe
+D:\ElevenFiftyProjects\Blue Badge\C#_Challanges\Concert_Dungeon\ProgramUI\bin\Debug\ProgramUI.pdb
+D:\ElevenFiftyProjects\Blue Badge\C#_Challanges\Concert_Dungeon\ProgramUI\bin\Debug\Concert_Dungeon.dll
+D:\ElevenFiftyProjects\Blue Badge\C#_Challanges\Concert_Dungeon\ProgramUI\bin\Debug\Concert_Dungeon.pdb
+D:\ElevenFiftyProjects\Blue Badge\C#_Challanges\Concert_Dungeon\ProgramUI\bin\Debug\Concert_Dungeon.dll.config
 D:\ElevenFiftyProjects\Blue Badge\C#_Challanges\Concert_Dungeon\ProgramUI\obj\Debug\ProgramUI.csproj.AssemblyReference.cache
 D:\ElevenFiftyProjects\Blue Badge\C#_Challanges\Concert_Dungeon\ProgramUI\obj\Debug\ProgramUI.csproj.SuggestedBindingRedirects.cache
 D:\ElevenFiftyProjects\Blue Badge\C#_Challanges\Concert_Dungeon\ProgramUI\obj\Debug\ProgramUI.csproj.CoreCompileInputs.cache
+D:\ElevenFiftyProjects\Blue Badge\C#_Challanges\Concert_Dungeon\ProgramUI\obj\Debug\ProgramUI.csproj.CopyComplete
+D:\ElevenFiftyProjects\Blue Badge\C#_Challanges\Concert_Dungeon\ProgramUI\obj\Debug\ProgramUI.exe
+D:\ElevenFiftyProjects\Blue Badge\C#_Challanges\Concert_Dungeon\ProgramUI\obj\Debug\ProgramUI.pdb
