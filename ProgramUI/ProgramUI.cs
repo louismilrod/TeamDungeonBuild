@@ -81,7 +81,7 @@ namespace Program
                 "1. Parking Lot A \n" +
                 "2. Parking Lot B \n" +
                 "3. Parking Lot C \n" +
-                "4. North Entrance \n" +
+                "4. Press Entrance \n" +
                 "5. South Entrance \n" +
                 "6. East Entrance \n" +
                 "7. Bathroom \n" +
@@ -101,13 +101,13 @@ namespace Program
                     ParkingLotC();
                     break;
                 case "4":
-                    PressEnterance();
+                    PressEntrance();
                     break;
                 case "5":
-                    SouthEnterance();
+                    SouthEntrance();
                     break;
                 case "6":
-                    EastEnterance();
+                    EastEntrance();
                     break;
                 case "7":
                     Bathroom();
@@ -128,7 +128,7 @@ namespace Program
             string userinput = ReadLine().ToLower();
             
 
-            WriteLine("You approach the ticket counter.\n\n" +
+            WriteLine("You approach the ticket counter.\n" +
                 "An old man with a thinning ponytail and a Twisted Sister teashirt looks you up and down.\n" +
                 "Do you have a ticket?");
             ReadLine();
@@ -156,7 +156,7 @@ namespace Program
                 {
                     Console.WriteLine("Then why did you come here?");
                     ExplorationMenu();
-                }
+                }              
                 
 
 
@@ -330,7 +330,7 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMWNKKKKKKKK000000000K
             }
         }
 
-        private void EastEnterance() //normal security gate, ticket guard to interact w/, (guard could stop you)
+        private void EastEntrance() //normal security gate, ticket guard to interact w/, (guard could stop you)
         {
 
 
@@ -388,14 +388,88 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMWNKKKKKKKK000000000K
 
         }
 
-        private void SouthEnterance() // other concert goers, more relaxed security guy
+        private void SouthEntrance() // other concert goers, more relaxed security guy
         {
-            throw new NotImplementedException();
+            var character = _repo.GetCharacter();
+
+            WriteLine("You approach the venue from the south. \n" +
+                "You are hopeful that this line won't be long but the security is very relaxed\n" +
+                "Do you want to wait in line? y/n");
+
+            string userinput = ReadLine().ToLower();
+            switch (userinput)
+            {
+                case "y":
+                    WriteLine("You join the line at the back.");
+                    
+                    bool isWaiting = true;
+                    do
+                    {
+                        Thread.Sleep(2500);
+                        WriteLine("Do you want to keep on waiting? y/n");
+                        string userinput2 = ReadLine().ToLower();
+                        if (userinput2 == "n")
+                        {
+                            ExplorationMenu();
+                        }
+
+                    } while (isWaiting == true);
+                    break;
+                case "n":
+                    WriteLine("You leave the south entrance");
+                    Thread.Sleep(2000);
+                    ExplorationMenu();
+                    break;
+                default: WriteLine("Please enter a valid selection");
+                    break;
+            }
         }
 
-        private void PressEnterance()  //locked enterance, road-crew guy (gives hard hard, asks what band we like more and gives hard hat)
+        private void PressEntrance()  //locked enterance, road-crew guy (gives hard hard, asks what band we like more and gives hard hat)
         {
-            throw new NotImplementedException();
+            var character = (_repo.GetCharacter());
+
+            WriteLine("You approach the press entrance however the gate is locked \n" +
+                "There is a stagehand by the door \n" +
+                "Do you wish to talk to him y/n?");
+            string userinput = ReadLine().ToLower();
+            switch (userinput)
+            {
+                case"y":                   
+
+                    Console.WriteLine("'Hey kid, do you know who the Dan is in Steely Dan?'");
+                    string userinput2 = ReadLine().ToLower();
+                    if (userinput2 == "walter becker")
+                    {
+                        WriteLine("Here, take this vest");
+                        WriteLine("He throws you a reflective vest");
+                        Thread.Sleep(2500);
+                        character.HasVest = true;
+                    }
+                    if (userinput2 == "donald fagen")
+                    {
+                        WriteLine("'Here, take this vest'\n");
+                        WriteLine("He throws you a reflective vest");
+                        Thread.Sleep(2500);
+                        character.HasVest = true;
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("There's no Dan in Steely Dan");
+                        Thread.Sleep(2000);
+                        ExplorationMenu();
+                    }
+                    break;
+                case"n":
+                    WriteLine("Back to the drawing board");
+                    ExplorationMenu();
+                    break;
+                default:
+                    WriteLine("Please enter a valid selection");
+                    break;
+            }
+
         }
 
         private void ParkingLotC()
