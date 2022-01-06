@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Concert_Dungeon_POCOs", "Concert_Dungeon\Concert_Dungeon_POCOs.csproj", "{FBE9CE3E-D7DB-4EA5-9D55-D230EF211E9F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POCO_Directory", "Concert_Dungeon\POCO_Directory.csproj", "{FBE9CE3E-D7DB-4EA5-9D55-D230EF211E9F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramUI", "ProgramUI\ProgramUI.csproj", "{446489FE-FE09-4DA7-A808-3345DD028FB1}"
 EndProject

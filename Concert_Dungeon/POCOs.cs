@@ -5,36 +5,40 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace Concert_Dungeon
+namespace POCO_Directory
 {
-    public class POCOs
+    public class Character
     {
-        public int HitPoints { get; set; }
-        public bool HasTicket { get; set; }
-        public bool HasLadder { get; set; }
-        public bool HasVest { get; set; }
-        public bool Clipboard { get; set; }
-
-        public int ScalpedTicket
+        public Character(bool hasTicket, bool hasLadder, bool hasVest, bool hasClipBoard)
         {
-            set
-            {
-                Random ticket = new Random();
-                int x = ticket.Next(0, 50);
-                if (x > 25)
-                {
-                    Console.WriteLine("Welcome to the concert");
-                }
-                else
-                {
-                    Console.WriteLine("This ticket is fradulent and you were shamed by security");
-                    Thread.Sleep(3000);
-                }
-            }
-
+            HasTicket = hasTicket;
+            HasLadder = hasLadder;  
+            HasVest = hasVest;
+            HasClipBoard = hasClipBoard;            
 
         }
 
+        public Character()
+        {
+
+        }
+        
+        public bool HasTicket { get; set; }
+        public bool HasLadder { get; set; }
+        public bool HasVest { get; set; }
+        public bool HasClipBoard { get; set; }
+
+        public bool ScalpedTicket
+        {
+            get
+            {
+                Random ticket = new Random();
+                int x = ticket.Next(0, 50);
+                return (x > 25);
+                
+            }
+            
+        }
 
     }
 }

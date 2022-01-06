@@ -1,0 +1,6 @@
+D:\ElevenFiftyProjects\Blue Badge\C#_Challanges\Concert_Dungeon\Concert_Dungeon\bin\Debug\Concert_Dungeon.dll.config
+D:\ElevenFiftyProjects\Blue Badge\C#_Challanges\Concert_Dungeon\Concert_Dungeon\bin\Debug\Concert_Dungeon.dll
+D:\ElevenFiftyProjects\Blue Badge\C#_Challanges\Concert_Dungeon\Concert_Dungeon\bin\Debug\Concert_Dungeon.pdb
+D:\ElevenFiftyProjects\Blue Badge\C#_Challanges\Concert_Dungeon\Concert_Dungeon\obj\Debug\POCO_Directory.csproj.CoreCompileInputs.cache
+D:\ElevenFiftyProjects\Blue Badge\C#_Challanges\Concert_Dungeon\Concert_Dungeon\obj\Debug\Concert_Dungeon.dll
+D:\ElevenFiftyProjects\Blue Badge\C#_Challanges\Concert_Dungeon\Concert_Dungeon\obj\Debug\Concert_Dungeon.pdb

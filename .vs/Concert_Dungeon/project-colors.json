@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "fbe9ce3e-d7db-4ea5-9d55-d230ef211e9f": {
+      "ProjectGuid": "fbe9ce3e-d7db-4ea5-9d55-d230ef211e9f",
+      "DisplayName": "POCO_Directory",
+      "ColorIndex": 0
+    },
+    "446489fe-fe09-4da7-a808-3345dd028fb1": {
+      "ProjectGuid": "446489fe-fe09-4da7-a808-3345dd028fb1",
+      "DisplayName": "ProgramUI",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 2
+}

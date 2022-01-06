@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.IO;
 using static System.Console;
-
+using POCO_Directory;
+using static POCO_Directory.Character;
 
 namespace Program
 {
     public class ProgramUI
     {
-        new POCOs poco = new POCOs();
         
-        private bool hasTicket;
-        private bool hasMoney;
-        private bool hasClipboard;
+        //private bool hasTicket;
+        //private bool hasMoney;
+        //private bool hasClipboard;
         
 
         public ProgramUI()
@@ -24,19 +24,25 @@ namespace Program
             
         }
 
+        public ProgramUI(bool hasTicket)
+        {
+            
+            
+        }
 
         public void Run()
         {                
-            //Seed();
+            Seed();
             ShowMenu();
         }
 
-        //private void Seed()
-        //{
+        private void Seed()
+        {
+            Character character = new Character();
         //    //File.WriteAllLines("@www.github.com/therepo");
         //    //string text = File.ReadAllText(@);
         //    throw new NotImplementedException();
-        //}
+        }
 
         private void ShowMenu()
         {
@@ -130,7 +136,7 @@ namespace Program
             ReadLine();
 
 
-            if (hasTicket==true)
+            if (character.hasTicket==true)
             {
                 WriteLine("Enjoy the concert");
             }
@@ -161,7 +167,6 @@ namespace Program
                         Thread.Sleep(2000);
                         YouWin();
                         break;
-
                 }
             }
             return true;
@@ -214,7 +219,7 @@ namespace Program
                     {
 
                         WriteLine("You have found a clipboard? What you will you do with it?");
-                        hasClipboard = true;
+                        Character.hasClipboard = true;
 
                     }
                     else
@@ -230,22 +235,58 @@ namespace Program
             }
         }
 
-        private void EastEnterance() //normal security gate, ticket guard to interact w/
+        private void EastEnterance() //normal security gate, ticket guard to interact w/, (guard could stop you)
         {
             WriteLine("You approach the venue from the east. \n" +
-                "You are optimisitc the line will be short.");
+                "You are optimistic the line will be short (it won't be).\n" +
+                "What would you like to do?\n" +
+                "1. Approach the guard.\n" +
+                "2. Try to sneak through the gate");
+
+            string userinput = ReadLine().ToLower();
+
+            switch (userinput)
+            {
+                case "1":
+                    WriteLine("You approach the overweight, sweating guard.\n" +
+                        "He looks at you while wipping his face with a handkerchief\n" +
+                        "'Do you have a ticket?'");
+                    break;
+                    if (hasAtLeastThreeItems == true)
+                    {
+                        Console.WriteLine('Oh, the safety inspector, come right in, Sir!');
+                        Thread.Sleep(3000);
+                        YouWin();
+                    }
+                    else if (hasTicket == true)
+                    {
+                        Console.WriteLine('Ah, you have a ticket.');
+                    }
+                    {
+                        Console.WriteLine("Come back when you have a ticket");
+                    }else if (scalpedTicket)
+                    {
+
+                    }
+                    break;
+                case "2":
+                    //whatver the code is
+
+                default:
+                    break;
+            }
 
         }  
 
-        private void SouthEnterance()
+        private void SouthEnterance() // other concert goers, more relaxed security guy
         {
             throw new NotImplementedException();
-        } // other concert goers, more relaxed security guy
+        } 
 
-        private void PressEnterance()
+        private void PressEnterance()  //locked enterance, road-crew guy (gives hard hard, asks what band we like more and gives hard hat)
         {
             throw new NotImplementedException();
-        }       //locked enterance, road-crew guy to bribe to sneak in
+        }       
 
         private void ParkingLotC()
         {
