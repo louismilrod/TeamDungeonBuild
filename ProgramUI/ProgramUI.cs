@@ -456,7 +456,8 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMWNKKKKKKKK000000000K
 
                     else
                     {
-                        Console.WriteLine("There's no Dan in Steely Dan");
+                        Console.WriteLine("There's no Dan in Steely Dan\n" +
+                            "Not much of a Steely Dan fan are we?");
                         Thread.Sleep(2000);
                         ExplorationMenu();
                     }
@@ -474,8 +475,69 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMWNKKKKKKKK000000000K
 
         private void ParkingLotC()
         {
-            throw new NotImplementedException();
-        } //grilled cheese and fancy rocks for sale (vest)
+            WriteLine("You approach parking lot C and its...smelly \n" +
+                "There is a booth for grilled cheese and a booth for rocks \n" +
+                "Which would you like to visit?\n" +
+                "Grilled Cheese Stand\n" +
+                "The Rock Guy");
+            string userinput = ReadLine().ToLower();
+            if (userinput == "grilled cheese stand")
+            {
+                WriteLine("Welcome to the dollar grilled cheese booth. Would you like one? y/n");
+                string userinput2 = ReadLine().ToLower();
+                if (userinput2 == "y")
+                {
+                    WriteLine("The scary man hands you a grilled cheese and its the most delicious thing you have ever eaten");
+                    Thread.Sleep(2000);
+                    ExplorationMenu();
+                }
+                if (userinput2 == "n")
+                {
+                    WriteLine("You've decided its best not to eat food from random people in the parking lot");
+                    Thread.Sleep(2000);
+                    ExplorationMenu();
+                }
+                else
+                {
+                    WriteLine("Please input a valid selection.");
+                }
+            }
+            if (userinput == "the rock guy")
+            {
+                WriteLine("'Want to hear a joke?' y/n");
+                string userinput3 = ReadLine().ToLower();
+                if (userinput3 == "y")
+                {
+                    WriteLine("'What's dumber than a box of rocks?'");
+                    Thread.Sleep(500);
+                    WriteLine("'The stupid hippie carrying them, now scram'");
+                    Thread.Sleep(1000);
+                    ExplorationMenu();
+                    
+
+                }
+                if (userinput3 == "n")
+                {
+                    WriteLine("'They're not rocks, they are minerals. \n" +
+                        "Thanks for looking. Do you want to stay?'y/n");
+                    string userinput4 = ReadLine().ToLower();
+                    do 
+                    {
+                        WriteLine("You are looking around at all the amazing hunks of earth this guy drove to Pittsburgh for some reason");
+                    }while (userinput4 == "y");
+                    if (userinput4 == "n")
+                    {
+                        Thread.Sleep(1000);
+                        ExplorationMenu();
+                    }
+
+                }
+            }
+
+
+
+
+        } //grilled cheese and fancy rocks for sale
 
         private void ParkingLotB()
         {
