@@ -76,7 +76,7 @@ namespace Program
         private void ExplorationMenu()
         {
             Clear();
-            Write("Welcome my son to the machine\n");
+            WriteLine("Welcome my son to the machine\n");
             WriteLine("Choose which direction to go: \n" +
                 "1. Parking Lot A \n" +
                 "2. Parking Lot B \n" +
