@@ -28,7 +28,7 @@ namespace Program
 
         private void Seed()
         {
-            Character character = new Character(false, false, false, false, false);
+            Character character = new Character(false, false, false, false, false, false);
             _repo.AddCharacterToDirectory(character);
 
 
@@ -45,8 +45,8 @@ namespace Program
                 Clear();
                 WriteLine("Welcome to your fantastic concert adventure your goal is to get in the door \n" +
                     "1. Start a new run\n" +
-                    "2. Load a game \n" +
-                    "3. Delete Game\n" +
+                    //"2. Load a game \n" +
+                    //"3. Delete Game\n" +
                     "4. Exit \n");
 
                 string userinput = ReadLine();
@@ -76,7 +76,7 @@ namespace Program
         private void ExplorationMenu()
         {
             Clear();
-            Write("Welcome my son to the machine");
+            Write("Welcome my son to the machine\n");
             WriteLine("Choose which direction to go: \n" +
                 "1. Parking Lot A \n" +
                 "2. Parking Lot B \n" +
@@ -122,16 +122,15 @@ namespace Program
             }
         }
 
-        public bool BoxOffice()
+        public void BoxOffice()
         {
             var character = _repo.GetCharacter();
-            string userinput = ReadLine().ToLower();
 
 
             WriteLine("You approach the ticket counter.\n" +
                 "An old man with a thinning ponytail and a Twisted Sister t-shirt looks you up and down.\n" +
                 "Do you have a ticket?");
-            ReadLine();
+            Thread.Sleep(2000);
 
             if (character.HasScalpedticket == true)
             {
@@ -143,7 +142,7 @@ namespace Program
                     Thread.Sleep(2500);
                     YouWin();
                 }
-                else 
+                else
                 {
                     WriteLine("I knew it was too good to be true!\n" +
                         "That ticket was a total fake!");
@@ -152,8 +151,10 @@ namespace Program
                 }
 
             }
+
             if (character.HasTicket == true)
             {
+                WriteLine("You flash the man your ticket.");
                 WriteLine("Enjoy the concert");
                 Thread.Sleep(2500);
                 YouWin();
@@ -163,46 +164,53 @@ namespace Program
                 WriteLine("Would you like to puchase a ticket?\n" +
                     "1. Yes\n" +
                     "2. No \n");
+                var userinput2 = ReadLine().ToLower();
 
-                if (character.HasMoney == true)
-                {
-                    WriteLine("Here's your ticket boy-o");
-                    character.HasTicket = true;
-                    return BoxOffice();
-                }
-                else
-                {
-                    Console.WriteLine("Then why did you come here?");
-                    ExplorationMenu();
-                }
+                switch (userinput2)
 
-
-
-                switch (userinput)
                 {
                     case "1":
-                        if (character.HasMoney == false)
+                        if (userinput2 == "1")
                         {
-                            Console.WriteLine("You don't have any money! Get out of here before I call security!");
+                            while (character.HasMoney == true)
+                            {
+
+
+                                WriteLine("Here's your ticket boy-o");
+                                Thread.Sleep(1750);
+                                YouWin();
+
+
+                            }
+
+                            while (character.HasMoney == false)
+                            {
+                                WriteLine("'Can't get a ticket without money these days.'");
+                                Thread.Sleep(1750);
+                                BoxOffice();
+
+                            }
                         }
-                        else YouWin();
                         break;
                     case "2":
-                        WriteLine("Then why are you here? Shoo, shoo!");
-                        Thread.Sleep(2000);
+                        Console.WriteLine("Then why did you come here?");
+                        Thread.Sleep(1750);
+                        ExplorationMenu();
                         break;
                     case "i wanna rock":
-                        WriteLine("'I used to be just like you kid. Don't tell anyone.'" +
-                            "He winks at you as he slides you a ticket stub");
+                        WriteLine("'I used to be just like you kid. Don't tell anyone.' \n" +
+                                   "He winks at you as he slides you a ticket stub");
                         Thread.Sleep(2000);
                         YouWin();
                         break;
+                    default:
+                        WriteLine("Please enter a valid selection");
+                        break;
                 }
+
             }
-            return true;
-
-
         }
+
 
         public void YouWin()
         {
@@ -289,14 +297,44 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMWNKKKKKKKK000000000K
 ";
             Console.WriteLine(Youwin);
             ReadKey();
-            return;
+            Run();
         }
 
         public void YouLose()
         {
             WriteLine("You did not get in the door and drove eight hours one way for nothing");
             Thread.Sleep(2000);
-            return;
+            Console.Title = "YouLose";
+            string YouLose = @"
+                                                                                                                                                                                 
+                                                                                                                                                      
+                                                         'c.    ,:.   .';;;;,..   .c,    'c.                                                          
+                                                         :O;   .lx'  ,x:.....cd'  ,kc    cO;                                                          
+                                                         .c:. .,:;.  ;O:    .ck,  ,kc    cO;                                                          
+                                                           .:;::.    ;O:     ck,  ,kc    cO;                                                          
+                                                            'xl.     ;O:     ck,  ,kc    cO;                                                          
+                                                            'xl.     .:;;;;;;::.  .;;;;;;::.                                                          
+                                                             ..        .''''..      .''''.                                                            
+                                                                                                                                                      
+                                                      ;c.       ..';;;,..    ..';;;,'.    .';;;,.                                                     
+                                                     .lx'      .cx,   'ol.   :x;   .',.  ;k:.                                                         
+                                                     .lx'      .lx,   .do.   .::;;;,.    :Oo:,.                                                       
+                                                     .lx'      .lx,   .do.     .:::::,.  :Oo:;.                                                       
+                                                     .lx'      .lx,   .do.   .;.   .od.  :O:                                                          
+                                                      ';;;;;'   ';;;;;;;'    .;;;;;;;,.  .;;;;;,.                                                     
+                                                        .....     .....        .....       .....                                                      
+                                                                                                                                                      
+                                                                                                                                                      
+                                                                                                                                                      
+                                                                                                                                                      
+                                                                                                                                                      
+                                                                                                                                                      
+                                                                                                                                                      
+                                                                                                                                                     
+";
+            WriteLine(YouLose);
+            ReadKey();
+            Run();
         }
 
         private void Bathroom()  //search the bathroom, talk to someone in the bathroom, search the trash (find an item//clipboard used for cleaning rotation),
@@ -320,23 +358,29 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMWNKKKKKKKK000000000K
                     Thread.Sleep(2000);
                     break;
                 case "2":
-                    WriteLine("Why are you talking to me in the bathroom dude? Do you take picuters of peoples texts too?");
+                    WriteLine("Why are you talking to me in the bathroom dude? Do you take picuters of peoples texts too?\n");
                     Thread.Sleep(2000);
                     break;
                 case "3":
                     WriteLine("The trash is overlfowing with Liquid Death \n" +
                         "On the right of the bin there is an empty clipboard with an unused cleaning rotation check list \n" +
                         "Do you want to abscond with this clipboard? Yes/No");
-                    if (userinput == "yes")
-                    {
 
+                    string userinput2 = ReadLine().ToLower();
+                    if (userinput2 == "yes")
+                    {
                         WriteLine("You have found a clipboard? What you will you do with it?");
                         character.HasClipBoard = true;
+                        Thread.Sleep(1750);
+                        ExplorationMenu();
 
                     }
                     else
                     {
+
                         WriteLine("You left the clipboard where you found it like your mother taught you");
+                        Thread.Sleep(1750);
+                        ExplorationMenu();
                     }
                     break;
                 case "4":
@@ -344,6 +388,7 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMWNKKKKKKKK000000000K
                     break;
                 default:
                     WriteLine("The bathroom is a weird place man...");
+                    ExplorationMenu();
                     break;
             }
         }
@@ -400,7 +445,7 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMWNKKKKKKKK000000000K
 
 
                 default:
-                    WriteLine("Your code didn't run right");
+                    WriteLine("Please enter a valid selection");
                     break;
             }
 
@@ -464,6 +509,7 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMWNKKKKKKKK000000000K
                         WriteLine("He throws you a reflective vest");
                         Thread.Sleep(2500);
                         character.HasVest = true;
+                        ExplorationMenu();
                     }
                     if (userinput2 == "donald fagen")
                     {
@@ -471,6 +517,7 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMWNKKKKKKKK000000000K
                         WriteLine("He throws you a reflective vest");
                         Thread.Sleep(2500);
                         character.HasVest = true;
+                        ExplorationMenu();
                     }
 
                     else
@@ -519,6 +566,7 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMWNKKKKKKKK000000000K
                 else
                 {
                     WriteLine("Please input a valid selection.");
+                    ExplorationMenu();
                 }
             }
             if (userinput == "the rock guy")
@@ -557,8 +605,13 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMWNKKKKKKKK000000000K
                         Thread.Sleep(1000);
                         ExplorationMenu();
                     }
-
                 }
+            }
+            else
+            {
+                WriteLine("Please input a valid selection");
+                Thread.Sleep(1750);
+                ParkingLotC();
             }
 
         }
@@ -569,16 +622,44 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMWNKKKKKKKK000000000K
             var character = _repo.GetCharacter();
             WriteLine("You approach Parking Lot B and find the tour busses parked alongside of some construction equipment \n" +
                 "Would you like to inspect the tour bus or the construction equipment?");
-            string userinput = ReadLine().ToLower();
+            var userinput = ReadLine().ToLower();
             switch (userinput)
             {
                 case "tour bus":
-
+                    WriteLine("You knock on the door of the tour bus and wake the driver \n" +
+                        "'What do you want?' he asks, before slamming the door in your face");
+                    Thread.Sleep(1750);
+                    ExplorationMenu();
                     break;
                 case "construction equipment":
+                    WriteLine("Off in the distance you hear The Allman Brothers playing Ramblin' Man \n" +
+                        "As you approach you notice a construction crew casually working to fill potholes in the parking lot.\n" +
+                        "Most of them are drinking adult beverages and yelling at each other over sports teams.\n" +
+                        "What would you like to do?\n" +
+                        "1. Speak to the construction workers\n" +
+                        "2. Look around");
+                    var userinput2 = ReadLine().ToLower();
+                    if (userinput2 == "1")
+                    {
+                        WriteLine("YouLose approach the drunken construction workers, the smell is overpowering\n" +
+                            "'Hey kid, what are you lookin at?' the ugliest of the crew says to you.\n" +
+                            "Looks like it's time to run! You narrowly avoid a beating as you escape the parking lot.");
+                        Thread.Sleep(2000);
+                        ExplorationMenu();
+                    }
+                    if (userinput2 == "2")
+                    {
+                        WriteLine("You notice some equipment off to the side of the crew that isn't being watched very closely.\n" +
+                            "A ladder catches your eye immediately. 'This could be useful', you think to yourself.");
+                        character.HasLadder = true;
+                        Thread.Sleep(3000);
+                        ExplorationMenu();
+                    }
                     break;
                 default:
-                    WriteLine("Please enter a valid selection");
+                    WriteLine("Please enter 'tour bus' or 'construction equipment'");
+                    Thread.Sleep(2000);
+                    ParkingLotB();
                     break;
             }
 
@@ -591,11 +672,11 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMWNKKKKKKKK000000000K
             WriteLine("You journey into the A Lot\n" +
                 "You see a man in a trench coat with a cigarette hanging out of his mouth next to a burned out van\n" +
                 "and a border collie with a red handkerchief tied around it's neck\n" +
-                "Which would you like to approach?");
+                "Which would you like to approach? man/dog");
             string userinput = ReadLine().ToLower();
             switch (userinput)
             {
-                case "the man":
+                case "man":
                     WriteLine("Hey man, I got some tickets, real cheap, you looking to buy?");
                     string userinput1 = ReadLine().ToLower();
                     if (userinput1 == "y")
@@ -617,15 +698,86 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMWNKKKKKKKK000000000K
                     }
                     if (userinput1 == "n")
                         character.ScalpedTicket = false;
-                    WriteLine("You decide it's best to not trust his 'merchandise'");
-                        Thread.Sleep(3000);
+                    WriteLine("You decide it's best to not trust his 'merchandise'\n");
+                    Thread.Sleep(3000);
                     ExplorationMenu();
                     break;
-                case "the dog":
+                case "dog":
+                    int petcount = 0;
+                    DogPettingMethod();
+                    void DogPettingMethod()
+                    {
+
+                        WriteLine("\n A friendly border collie approaches you, he's wearing an adorable handkerchief and wagging his tail.\n" +
+                            "What would you like to do? pet/check/return \n");
+
+                        string userinput3 = ReadLine().ToLower();
+                        if (userinput3 == "pet")
+                        {
+                            while (petcount == 0)
+                            {
+                                WriteLine("Who's a good dog! This dog! That's right! You pet the dog's head, he appears to be smiling.\n");
+                                Thread.Sleep(2000);
+                                petcount++;
+                                DogPettingMethod();
+
+
+                            }
+                            while (petcount == 1)
+                            {
+                                WriteLine("Yes, this is a friendly dog indeed. You pet him vigorously, he enjoys the attention.\n");
+                                Thread.Sleep(2000);
+                                petcount++;
+                                DogPettingMethod();
+
+
+                            }
+                            while (petcount == 2)
+                            {
+                                WriteLine("The dog is really enjoying the attention. You feel the excitement! Good dog!\n");
+                                Thread.Sleep(2000);
+                                petcount++;
+                                DogPettingMethod();
+
+
+                            }
+
+
+                            while (petcount == 3)
+                            {
+                                WriteLine("'Who's a good boy? That's right! You're a good boy!' \n");
+                                Thread.Sleep(2000);
+                                petcount++;
+                                DogPettingMethod();  //
+                            }
+                            while (petcount >= 3)
+                            {
+                                WriteLine("After much petting and happiness the dog shakes.\n" +
+                                    "You notice a small bill fold fall out of it's handkerchief before it runs off. SCORE!\n" +
+                                    "You finally have some money!");
+                                character.HasMoney = true;
+                                Thread.Sleep(3000);
+                                ExplorationMenu();
+                            }
+                        }
+                        if (userinput3 == "check")
+                        {
+                            WriteLine("You notice it might have something in its handkerchief but it seems to want more attention.\n");
+                            Thread.Sleep(2500);
+                            DogPettingMethod();
+
+                        }
+                        if (userinput3 == "return")
+                        {
+                            Thread.Sleep(500);
+                            ExplorationMenu();
+
+                        }
+                    }
                     break;
                 default:
                     WriteLine("Please enter a valid selection");
-                        break;
+                    break;
             }
         }
 
@@ -638,5 +790,8 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMWNKKKKKKKK000000000K
         {
             throw new NotImplementedException();
         }
+
+
     }
 }
+

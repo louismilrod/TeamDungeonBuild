@@ -9,13 +9,14 @@ namespace POCO_Directory
 {
     public class Character
     {
-        public Character(bool hasTicket, bool hasLadder, bool hasVest, bool hasClipBoard, bool hasMoney)
+        public Character(bool hasTicket, bool hasLadder, bool hasVest, bool hasClipBoard, bool hasMoney, bool hasAllThreeItems)
         {
             HasTicket = hasTicket;
             HasLadder = hasLadder;  
             HasVest = hasVest;
             HasClipBoard = hasClipBoard;  
             HasMoney = hasMoney;
+            HasAllThreeItems = hasAllThreeItems;
 
         }
 
@@ -53,15 +54,16 @@ namespace POCO_Directory
 
         public bool HasAllThreeItems
         {
-            get { return false ; }
-             
-            set 
-            { 
-               if (HasClipBoard==true && HasLadder==true && HasVest==true)
-                {
-                    return;
-                }
+            get
+            {
+                if (HasClipBoard == true && HasLadder == true && HasVest == true)
+                HasAllThreeItems = true;               
+                return HasAllThreeItems;
+            }
 
+            set
+            { 
+               
             }        
         }
 
